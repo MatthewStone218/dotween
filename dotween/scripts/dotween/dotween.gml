@@ -96,12 +96,12 @@ function ease_in_out_back(xx){
 
 function ease_in_elastic(xx){
     var c4 = (2 * pi) / 3;
-    return xx == 0 ? 0 : xx == 1 ? 1 : -pow(2, 10 * xx - 10) * sin((xx * 10 - 10.75) * c4);
+    return xx == 0 ? 0 : (xx == 1 ? 1 : -pow(2, 10 * xx - 10) * sin((xx * 10 - 10.75) * c4));
 }
 
 function ease_out_elastic(xx){
     var c4 = (2 * pi) / 3;
-    return xx == 0 ? 0 : xx == 1 ? 1 : pow(2, -10 * xx) * sin((xx * 10 - 0.75) * c4) + 1;
+    return xx == 0 ? 0 : (xx == 1 ? 1 : pow(2, -10 * xx) * sin((xx * 10 - 0.75) * c4) + 1);
 }
 
 function ease_in_out_elastic(xx){
