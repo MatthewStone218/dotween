@@ -21,7 +21,7 @@ function ease_out_quad(xx){
 }
 
 function ease_in_out_quad(xx){
-    return xx < 0.5 ? 2 * xx * xx : 1 - pow(-2 * xx + 2, 2) / 2;
+    return xx < 0.5 ? 2 * xx * xx : 1 - power(-2 * xx + 2, 2) / 2;
 }
 
 function ease_in_cubic(xx){
@@ -29,11 +29,11 @@ function ease_in_cubic(xx){
 }
 
 function ease_out_cubic(xx){
-    return 1 - pow(1 - xx, 3);
+    return 1 - power(1 - xx, 3);
 }
 
 function ease_in_out_cubic(xx){
-    return xx < 0.5 ? 4 * xx * xx * xx : 1 - pow(-2 * xx + 2, 3) / 2;
+    return xx < 0.5 ? 4 * xx * xx * xx : 1 - power(-2 * xx + 2, 3) / 2;
 }
 
 function ease_in_quart(xx){
@@ -41,37 +41,37 @@ function ease_in_quart(xx){
 }
 
 function ease_out_quart(xx){
-    return 1 - pow(1 - xx, 4);
+    return 1 - power(1 - xx, 4);
 }
 
 function ease_in_out_quart(xx){
-    return xx < 0.5 ? 8 * xx * xx * xx * xx : 1 - pow(-2 * xx + 2, 4) / 2;
+    return xx < 0.5 ? 8 * xx * xx * xx * xx : 1 - power(-2 * xx + 2, 4) / 2;
 }
 
 function ease_in_expo(xx){
-    return xx == 0 ? 0 : pow(2, 10 * xx - 10);
+    return xx == 0 ? 0 : power(2, 10 * xx - 10);
 }
 
 function ease_out_expo(xx){
-    return xx == 1 ? 1 : 1 - pow(2, -10 * xx);
+    return xx == 1 ? 1 : 1 - power(2, -10 * xx);
 }
 
 function ease_in_out_expo(xx){
     if (xx == 0) return 0;
     if (xx == 1) return 1;
-    return xx < 0.5 ? pow(2, 20 * xx - 10) / 2 : (2 - pow(2, -20 * xx + 10)) / 2;
+    return xx < 0.5 ? power(2, 20 * xx - 10) / 2 : (2 - power(2, -20 * xx + 10)) / 2;
 }
 
 function ease_in_circ(xx){
-    return 1 - sqrt(1 - pow(xx, 2));
+    return 1 - sqrt(1 - power(xx, 2));
 }
 
 function ease_out_circ(xx){
-    return sqrt(1 - pow(xx - 1, 2));
+    return sqrt(1 - power(xx - 1, 2));
 }
 
 function ease_in_out_circ(xx){
-    return xx < 0.5 ? (1 - sqrt(1 - pow(2 * xx, 2))) / 2 : (sqrt(1 - pow(-2 * xx + 2, 2)) + 1) / 2;
+    return xx < 0.5 ? (1 - sqrt(1 - power(2 * xx, 2))) / 2 : (sqrt(1 - power(-2 * xx + 2, 2)) + 1) / 2;
 }
 
 function ease_in_back(xx){
@@ -83,25 +83,25 @@ function ease_in_back(xx){
 function ease_out_back(xx){
     var c1 = 1.70158;
     var c3 = c1 + 1;
-    return 1 + c3 * pow(xx - 1, 3) + c1 * pow(xx - 1, 2);
+    return 1 + c3 * power(xx - 1, 3) + c1 * power(xx - 1, 2);
 }
 
 function ease_in_out_back(xx){
     var c1 = 1.70158;
     var c2 = c1 * 1.525;
     return xx < 0.5
-        ? (pow(2 * xx, 2) * ((c2 + 1) * 2 * xx - c2)) / 2
-        : (pow(2 * xx - 2, 2) * ((c2 + 1) * (xx * 2 - 2) + c2) + 2) / 2;
+        ? (power(2 * xx, 2) * ((c2 + 1) * 2 * xx - c2)) / 2
+        : (power(2 * xx - 2, 2) * ((c2 + 1) * (xx * 2 - 2) + c2) + 2) / 2;
 }
 
 function ease_in_elastic(xx){
     var c4 = (2 * pi) / 3;
-    return xx == 0 ? 0 : (xx == 1 ? 1 : -pow(2, 10 * xx - 10) * sin((xx * 10 - 10.75) * c4));
+    return xx == 0 ? 0 : (xx == 1 ? 1 : -power(2, 10 * xx - 10) * sin((xx * 10 - 10.75) * c4));
 }
 
 function ease_out_elastic(xx){
     var c4 = (2 * pi) / 3;
-    return xx == 0 ? 0 : (xx == 1 ? 1 : pow(2, -10 * xx) * sin((xx * 10 - 0.75) * c4) + 1);
+    return xx == 0 ? 0 : (xx == 1 ? 1 : power(2, -10 * xx) * sin((xx * 10 - 0.75) * c4) + 1);
 }
 
 function ease_in_out_elastic(xx){
@@ -109,8 +109,8 @@ function ease_in_out_elastic(xx){
     if (xx == 0) return 0;
     if (xx == 1) return 1;
     return xx < 0.5
-        ? -(pow(2, 20 * xx - 10) * sin((20 * xx - 11.125) * c5)) / 2
-        : (pow(2, -20 * xx + 10) * sin((20 * xx - 11.125) * c5)) / 2 + 1;
+        ? -(power(2, 20 * xx - 10) * sin((20 * xx - 11.125) * c5)) / 2
+        : (power(2, -20 * xx + 10) * sin((20 * xx - 11.125) * c5)) / 2 + 1;
 }
 
 function ease_in_bounce(xx){
